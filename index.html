@@ -33,6 +33,7 @@
     
     <!-- Initialization -->
     <script>
+        setPersistent();
         const hideFullScreenButton = "1";
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/Configurator_WebGL.loader.js";
@@ -111,6 +112,23 @@
         };
         document.body.appendChild(script);
     </script>
+    <script>
+        function setPersistent(){
+            if (navigator.storage && navigator.storage.persist) {
+                navigator.storage.persist().then(persistent => {
+                    if (persistent) {
+                        console.log("[Persitence] El almacenamiento es persistente.");
+                    } else {
+                        console.log("[Persitence] El almacenamiento no es persistente.");
+                    }
+                }).catch(error => {
+                    console.error("[Persitence] Error al solicitar persistencia:", error);
+                });
+            } else {
+                console.log("[Persitence] La API de persistencia no está soportada en este navegador.");
+            }
+        }
+    </script>
     <!-- Clean data -->
     <!--
     <script>
@@ -137,8 +155,9 @@
             //clearSessionStorage();            
         }
     </script>
-    -->
-    <!-- Mouse int and out -->
+-->
+
+<!-- Mouse int and out -->
     <!--
     <script>
         let webglLoaded = false;    
@@ -170,8 +189,10 @@
             }
         });      		
     </script>    
-     -->
-	<!-- Copy from unity to clipboard -->
+-->
+
+<!-- Copy from unity to clipboard -->
+    <!--
 	<script>	
 		function copyToClipboard(text) {
 			var textarea = document.createElement("textarea");
@@ -182,6 +203,6 @@
 			document.body.removeChild(textarea);
 		}
 	</script>
-
+-->
 </body>
 </html>
