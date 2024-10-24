@@ -33,7 +33,6 @@
     
     <!-- Initialization -->
     <script>
-        setPersistent();
         const hideFullScreenButton = "1";
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/Configurator_WebGL.loader.js";
@@ -88,6 +87,7 @@
         const script = document.createElement("script");
         script.src = loaderUrl;
         script.onload = () => {
+            setPersistent();
             //clearSiteData();
             createUnityInstance(canvas, config, (progress) => {
                 spinner.style.display = "none";
