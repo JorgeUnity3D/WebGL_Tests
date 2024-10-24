@@ -1,0 +1,184 @@
+#canvas-wrap {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-bottom: 4px;
+    width: 100%;
+    height: 100%;
+}
+
+#rpm-container {
+    width: 100%;
+    height: 95%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: none;
+    pointer-events: inherit;
+}
+
+.rpm-frame {
+    width: 100%;
+    height: 95%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    border: none;
+    display: block;
+    pointer-events: inherit;
+}
+
+#rpm-hide-button {
+    cursor: pointer;
+    width: 100%;
+    height: 5%;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 20px;
+    border: none;
+    color: #000;
+    background-color: #e2e3ec;
+    padding: 0;
+    margin: 0;
+    box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,0.2);
+    pointer-events: inherit;
+}
+
+    #rpm-hide-button:hover {
+        background-color: #f1f2fa;
+    }
+
+    #rpm-hide-button:Active {
+        background-color: #e2e3ec;
+    }
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+canvas {
+    display: block;
+}
+
+body {
+    margin: 0;
+}
+
+#unity-container {
+    width: 100%;
+    height: 100%;
+}
+
+#unity-canvas {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+}
+
+#loading-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#unity-loading-bar {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#unity-logo {
+    text-align: center;
+}
+
+    #unity-logo img {
+        max-width: 80%;
+    }
+
+#unity-progress-bar-empty {
+    width: 80%;
+    height: 24px;
+    margin: 10px 20px 20px 10px;
+    text-align: left;
+    border: 1px solid white;
+    padding: 2px;
+    background-color: #f2f2f2;
+}
+
+#unity-progress-bar-full {
+    width: 0%;
+    height: 100%;
+    /*background: white;*/
+    background-color: #4CAF50;
+}
+
+.light #unity-progress-bar-empty {
+    border-color: black;
+}
+
+.light #unity-progress-bar-full {
+    background: black;
+}
+
+#unity-fullscreen-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 38px;
+    height: 38px;
+    background: url('fullscreen-button.png') no-repeat center;
+    background-size: contain;
+}
+
+.spinner,
+.spinner:after {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+}
+
+.spinner {
+    margin: 10px;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid #ffffff;
+    transform: translateZ(0);
+    animation: spinner-spin 1.1s infinite linear;
+}
+
+.FullscreenLoading_loading__ZH_6F {
+    font-family: var(--font-family-primary);
+    font-size: 20px;
+    color: var(--text-primary);
+    background-color: #0f101f00;
+}
+
+@keyframes spinner-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
